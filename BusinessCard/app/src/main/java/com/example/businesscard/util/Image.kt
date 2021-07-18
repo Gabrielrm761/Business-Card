@@ -54,7 +54,7 @@ class Image {
                 context.contentResolver?.also { resolver ->
                     val contentValues = ContentValues().apply {
                         put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
-                        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+                        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
                         put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
 
                     }
@@ -67,7 +67,7 @@ class Image {
                     }
                 }
             } else {
-                // Devices rodando inferior a Q
+                // Devices rodando inferior ao android Q
                 val imagesDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
                 val image = File(imagesDir, filename)
                 shareIntent(context, Uri.fromFile(image))
